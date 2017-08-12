@@ -1,0 +1,57 @@
+{
+  "name": "extractor",
+  "version": "0.0.1",
+  "description": "Extractor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "build": "rimraf dist && tsc -p tsconfig.json --pretty",
+    "watch": "tsc -p tsconfig.json --pretty -w",
+    "start": "npm run build && node dist/index.js",
+    "start-dev": "concurrently \"nodemon dist/index.js\" \"npm run watch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gios/extractor.git"
+  },
+  "author": "Gios",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gios/extractor/issues"
+  },
+  "homepage": "https://github.com/gios/extractor#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "graphql": "^0.10.5",
+    "graphql-server-koa": "^1.0.2",
+    "graphql-tools": "^1.1.0",
+    "knex": "^0.13.0",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-helmet": "^3.2.0",
+    "koa-router": "^7.2.1",
+    "mysql2": "^1.4.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^4.0.0",
+    "@types/graphql": "^0.10.0",
+    "@types/knex": "0.0.56",
+    "@types/koa": "^2.0.39",
+    "@types/koa-bodyparser": "^3.0.23",
+    "@types/koa-helmet": "^3.1.0",
+    "@types/koa-router": "^7.0.22",
+    "@types/node": "^8.0.14",
+    "@types/winston": "^2.3.3",
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0",
+    "rimraf": "^2.6.1",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1"
+  },
+  "engines": {
+    "node": ">=8"
+  }
+}
